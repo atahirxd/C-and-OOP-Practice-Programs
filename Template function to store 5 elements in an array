@@ -1,0 +1,21 @@
+#include <iostream>
+using namespace std;
+
+template <class Arr>			//template
+void storeArray(Arr a, Arr b, Arr c, Arr d, Arr e) {		//takes five arguments
+	Arr arr[5];			//declaring array and initializing elements
+	arr[0] = a;
+	arr[1] = b;
+	arr[2] = c;
+	arr[3] = d;
+	arr[4] = e;
+	for (int i = 0; i < 5; i++)			//print one by one
+		cout << "Array member " << i + 1 << " is " << arr[i] << endl;
+}
+
+int main() {
+	char a = '%', b = '@', c = 's', d = 't', e = 'u';
+	storeArray(a, b, c, d, e);			//function call
+	system("pause");
+	return 0;
+}
