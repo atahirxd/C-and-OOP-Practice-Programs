@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+int main() {
+    int a, b, temp;
+    cout << "Enter the first integer to swap (a): ";    //first input
+    cin >> a;
+    cout << "Enter the first integer to swap (b): ";        //second input
+    cin >> b;
+    temp = a;       //swapping and storing value of 'a' temporarily and setting b equal to value of 'a'
+    a = b;
+    b = temp;
+    cout << endl << "The value of a is now "<<a<<endl<<"The value of b is now "<<b<<endl<<endl;
+    system("PAUSE");
+    return 0;
+}
