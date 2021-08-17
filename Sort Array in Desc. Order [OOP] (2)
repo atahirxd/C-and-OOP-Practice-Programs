@@ -1,0 +1,22 @@
+#include <iostream>
+#include "DescendingOrder.h" 
+using namespace std;
+
+void Descend::Swap(int* n1, int* n2) {          //function to swap numbers for bubble sort
+        int temp = *n1;
+        *n1 = *n2;
+        *n2 = temp;    
+}
+
+void Descend::sortArray(int* a, int n) { 
+    for (int i = 0; i < n - 1; i++)
+        for (int j = 0; j < n - i - 1; j++)         //bubble sort algorithm
+            if (a[j] < a[j + 1])
+                Descend::Swap(&a[j], &a[j + 1]);
+}
+
+void Descend::printArray(int n) {           //printing array
+    for (int i = 0; i < n; i++)
+        cout << endl << Arr[i] << "\t";
+    cout << endl;
+}
