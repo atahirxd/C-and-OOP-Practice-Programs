@@ -1,0 +1,57 @@
+#include <iostream>
+#include "UnitConversion.h"
+using namespace std;
+
+Units::Units() {		//constructor
+	Length = 0.0;
+	Weight = 0.0;
+	Temp = 0.0;
+}
+
+void Units::setLength(double l) {		//length setter
+	Length = l;
+}
+
+void Units::setWeight(double w) {		//weight setter
+	Weight = w;
+}
+
+void Units::setTemp(double t) {		//tenperature setter
+	Temp = t;
+}
+
+double Units::getLength() {		//length getter
+	return Length;
+}
+
+double Units::getWeight() {			//weight getter
+	return Weight;
+}
+
+double Units::getTemp() {			//temperature getter
+	return Temp;
+}
+
+double Units::toMeter(double f1) {		//convert to meters
+	return f1 * 0.3048;
+}
+
+double Units::toCm(double f2) {				//convert to centimeters
+	return f2 * 30.48;
+}
+
+double Units::toKg(double w1) {			//convert to kg
+	return w1 * 0.45359237;
+}
+
+double Units::toPound(double w2) {		//convert to pounds
+	return w2 * 2.205;
+}
+
+double Units::toFahr(double t1) {			//convert to fahrenheit
+	return (t1 * 1.8 + 32);
+}
+
+double Units::toCelsius(double t2) {		//convert to celsius
+	return ((t2 - 32) / 1.8);
+}
