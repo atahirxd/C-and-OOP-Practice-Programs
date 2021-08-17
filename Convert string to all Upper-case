@@ -1,0 +1,16 @@
+#include<iostream>
+using namespace std;
+#define SIZE 50
+void main() {
+	char arr[SIZE];
+	cout << "Enter string: ";
+	gets_s(arr);		//read user input
+	for (int count = 0; count <= SIZE - 1; count++) {		//for all characters in the array
+		if ((arr[count]>=97 && arr[count] <= 122))		//check if the element is not a blank character or special character
+			arr[count] -= 32;
+	}		//end if
+	for (int count = 0; count <= SIZE - 1 && arr[count] != '\0'; count++)		//until terminating character is found
+			cout << "" << arr[count];		//print character
+	cout << "\n";
+	system("PAUSE");
+}
