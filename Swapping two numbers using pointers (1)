@@ -1,0 +1,11 @@
+using namespace std;
+
+class Swap {		//class
+	int Number1, Number2;
+public:
+	Swap();
+	Swap(int, int);
+	void swapNumbers(int* no1, int* no2);
+	int getNumber1();
+	int getNumber2();
+};
