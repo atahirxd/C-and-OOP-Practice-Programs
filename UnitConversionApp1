@@ -1,0 +1,10 @@
+using namespace std;
+
+class Units {		//class
+private:
+	double Length, Weight, Temp;
+public:
+	double toMeter(double), toCm(double), toKg(double), toPound(double), toCelsius(double), toFahr(double), getLength(), getWeight(), getTemp();
+	void setLength(double), setWeight(double), setTemp(double);
+	Units();
+};
