@@ -1,0 +1,19 @@
+#include <iostream>
+#include "DescendingOrder.h"
+using namespace std;
+
+int main() {		//main start 
+	Descend no1;
+	int values;
+	cout << "How many numbers do you want to enter?" << endl;		//size of array by user input
+	cin >> values;
+	cout << endl << "Enter values of array: " << endl;			//initalize array
+	for (int i = 0; i < values; i++) {
+		cin >> no1.Arr[i];
+	}
+	no1.sortArray(no1.Arr, values);				//sort array in descending order
+	cout << "The resulting array is: ";			//print array
+	no1.printArray(values);
+	system("pause");
+	return 0;
+} //end main
