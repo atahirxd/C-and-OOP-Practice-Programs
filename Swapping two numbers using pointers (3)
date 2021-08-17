@@ -1,0 +1,25 @@
+include <iostream>
+#include "Swapping.h"
+using namespace std;
+
+int main() {		//main start
+	Swap n1; //no value assigned to object n1
+	int input1, input2, assign1, assign2;			//user input
+	cout << "Enter the first number: " << endl;
+	cin >> input1;
+	cout << "Enter the second number: " << endl;
+	cin >> input2;
+	Swap n2(input1, input2);
+	assign1 = n2.getNumber1();			//getters
+	assign2 = n2.getNumber2();
+	n2.swapNumbers(&assign1, &assign2);
+	cout << endl << "SWAPPED NUMBERS " << endl << "The first number is now: " << n2.getNumber1() << endl;		//swapped numbers display for object 2
+	cout << "The second number is now: " << n2.getNumber2() << endl;
+	assign1 = n1.getNumber1();			//getters
+	assign2 = n1.getNumber2();
+	n1.swapNumbers(&assign1, &assign2);
+	cout << endl << "SWAPPED NUMBERS DEFAULT" << endl << "The first number is now: " << n1.getNumber1() << endl;		//swapped numbers display for object 1
+	cout << "The second number is now: " << n1.getNumber2() << endl;
+	system("pause");
+	return 0;
+}		//end main
