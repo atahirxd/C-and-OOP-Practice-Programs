@@ -1,0 +1,9 @@
+using namespace std;
+
+class Descend {		//class
+public:
+	int Arr[];
+	void sortArray(int *a, int); 
+	void Swap(int* n1, int* n2); 
+	void printArray(int); 
+};
