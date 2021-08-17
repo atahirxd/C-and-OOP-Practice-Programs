@@ -1,0 +1,109 @@
+#include <iostream>
+using namespace std;
+
+template <class Add>			//template for adding matrices
+void addMatrix(Add row, Add col, Add arr1[][30], Add arr2[][30]) {
+	Add arr3[30][30];		//array for storing result
+	cout << "Matrices added result: " << endl;
+	for (int i = 0; i < row; i++)
+		for (int j = 0; j < col; j++)
+			arr3[i][j] = arr1[i][j] + arr2[i][j];		//adding each element
+	for (int i = 0; i < row; i++) {			//printing
+		for (int j = 0; j < col; j++)
+			cout << arr3[i][j] << '\t';
+		cout << endl;
+	}
+}
+
+template <class Subt>			//template for subtracting matrices
+void subtMatrix(Subt row, Subt col, Subt arr1[][30], Subt arr2[][30]) {
+	Subt arr3[30][30];			//array for storing result
+	cout << "Matrices subtracted result (matrix 2 subtracted from matrix 1): " << endl;
+	for (int i = 0; i < row; i++)				//subtracting each element
+		for (int j = 0; j < col; j++)
+			arr3[i][j] = arr1[i][j] - arr2[i][j];
+	for (int i = 0; i < row; i++) {			//printing
+		for (int j = 0; j < col; j++)
+			cout << arr3[i][j] << '\t';
+		cout << endl;
+	}
+}
+
+template <class Mul>			//template for multiplying matrices
+void multMatrix(Mul arr1[][2], Mul arr2[][2]) {
+	Mul arr3[2][2];			//array for storing result
+	cout << "Matrices multiplied result: " << endl;
+
+	for (int i = 0; i < 2; i++)
+		for (int j = 0; j < 2; j++)
+			arr3[i][j] = (arr1[i][0]*arr2[0][j]) + (arr1[i][1] * arr2[1][j]);			//logic for multiplying and adding the required terms in each row as per multiplying algorithm of matrices
+	
+	for (int i = 0; i < 2; i++) {			//printing
+		for (int j = 0; j < 2; j++)
+			cout << arr3[i][j] << '\t';
+		cout << endl;
+	}
+}
+
+int main() {		//main start
+	int r1, c1, r2, c2, m1[30][30], m2[30][30], m3[2][2], m4[2][2];			//declaration of variables and arrays
+	cout << "Enter no. of rows for first matrix: ";			//entering no. of rows and columns for the two matrices
+	cin >> r1;
+	cout << "Enter no. of colunms for first matrix: ";
+	cin >> c1;
+	cout << "Enter no. of rows for second matrix: ";
+	cin >> r2;
+	cout << "Enter no. of colunms for second matrix: ";
+	cin >> c2;
+	if (r1 == r2 && c1 == c2) {			//check if matrices can be added
+		cout << "Matrices can be added and subtracted." << endl << "Enter values for first matrix: ";
+		for (int i = 0; i < r1; i++)			//enter values for matrices
+			for (int j = 0; j < c1; j++)
+				cin >> m1[i][j];
+		cout << "Enter values for second matrix: ";
+		for (int i = 0; i < r1; i++)
+			for (int j = 0; j < c1; j++)
+				cin >> m2[i][j];
+		cout << "First Matrix is: " << endl;	//print matrices
+		for (int i = 0; i < r1; i++) {
+			for (int j = 0; j < c1; j++)
+				cout << m1[i][j] << '\t';
+			cout << endl;
+		}
+		cout << "Second Matrix is: " << endl;
+		for (int i = 0; i < r1; i++) {
+			for (int j = 0; j < c1; j++)
+				cout << m2[i][j] << '\t';
+			cout << endl;
+		}
+		addMatrix(r1, c1, m1, m2);			//call function for adding matrices
+		subtMatrix(r1, c2, m1, m2);			//call function for subtracting matrices
+	}
+	else
+		cout << "Matrices cannot be added or subtracted; dimensions do not match." << endl << endl;
+
+	cout << "For multiplication of 2x2 matrix, enter values of first matrix: ";			//enter values of 2x2 matrices
+	for (int i = 0; i < 2; i++)
+		for (int j = 0; j < 2; j++)
+			cin >> m3[i][j];
+	cout << "Enter values for second matrix: ";
+	for (int i = 0; i < 2; i++)
+		for (int j = 0; j < 2; j++)
+			cin >> m4[i][j];
+	cout << "First Matrix is: " << endl;		//print matrices
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 2; j++)
+			cout << m3[i][j] << '\t';
+		cout << endl;
+	}
+	cout << "Second Matrix is: " << endl;
+	for (int i = 0; i < 2; i++) {
+		for (int j = 0; j < 2; j++)
+			cout << m4[i][j] << '\t';
+		cout << endl;
+	}
+	multMatrix(m3, m4);			//function call for multiplying matrices
+	
+	system("pause");
+	return 0;
+}
