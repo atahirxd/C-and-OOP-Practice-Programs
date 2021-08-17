@@ -1,0 +1,15 @@
+#include<iostream>
+using namespace std;
+int main()
+{
+    int integerNum = 4;  // type int
+    long longNum = 0;         //type long
+    float fltNum = 1.0;       //type float
+    double dblNum = 2.0;        //type double
+    char symbol = 'e';       //type char
+    cout << "Bytes stored by data type int in this system are: " << sizeof(integerNum) << endl << endl << "Bytes stored by long data type in this system are: " << sizeof(longNum) << endl << endl; //individual storage for this system
+    cout << "Bytes stored by float data type in this system are: " << sizeof(fltNum) << endl << endl << "Bytes stored by double data type in this system are: " << sizeof(dblNum) << endl << endl; 
+    cout << "Bytes stored by char data type in this system are: " << sizeof(symbol) << endl << endl;
+    system("PAUSE");
+    return 0;
+}
