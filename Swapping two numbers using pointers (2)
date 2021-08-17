@@ -1,0 +1,30 @@
+#include <iostream>
+#include "Swapping.h" 
+using namespace std;
+
+Swap::Swap() {			//constructors
+	Number1 = 0;
+	Number2 = 0;
+}
+
+Swap::Swap(int n1, int n2) {
+	Number1 = n1;
+	Number2 = n2;
+}
+
+void Swap::swapNumbers(int* no1, int* no2) {			//swapping function
+	int temp;
+	temp = *no2;
+	*no2 = *no1;
+	*no1 = temp;
+	Number1 = *no1;
+	Number2 = *no2;
+}
+
+int Swap::getNumber1() {			//getters
+	return Number1;
+}
+
+int Swap::getNumber2() {
+	return Number2;
+}
