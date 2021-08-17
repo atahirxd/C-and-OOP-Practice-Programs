@@ -1,0 +1,56 @@
+#include <iostream>
+#include "UnitConversion.h"
+using namespace std;
+
+int main() {
+	Units unit1;
+	size_t end = 1;		//flag
+	double option1;
+	while (end != 0) {		//loop menu
+		system("cls");			//menu screen start
+		cout << "Welcome to UNIT CONVERSION APP!" << endl << endl << "What type of conversion do you want?" << endl;
+		cout << "Press 1 for Foot to Meters" << endl << "Press 2 for Foot to Centimeters" << endl << "Press 3 for Pounds to Kilogram" << endl;
+		cout << "Press 4 for Kilograms to Pounds" << endl << "Press 5 for Celsius to Fahrenheit" << endl << "Press 6 for Fahrenheit to Celsius" << endl;
+		cout << endl << "Press 0 to exit." << endl;
+		cin >> end;		//user input to navigate menu
+		system("cls");
+		if (end == 1) {			//convert foot to meters
+			cout << "CONVERT FOOT TO METERS" << endl << endl << "Enter length in feet: " << endl;
+			cin >> option1;		//user input
+			unit1.setLength(option1);		//length setter call
+			cout << "In meters: " << unit1.toMeter(unit1.getLength()) << " m" << endl;		//function calls to get length and convert to meters
+		}
+		else if (end == 2) {		//convert feet to cm
+			cout << "CONVERT FOOT TO CENTIMETERS" << endl << endl << "Enter length in feet: " << endl;
+			cin >> option1;		//user input
+			unit1.setLength(option1);		//length setter call
+			cout << "In centimeters: " << unit1.toCm(unit1.getLength()) << " cm" << endl;		//function calls to get length and convert to centimeters
+		}
+		else if (end == 3) {		//convert pounds to kg
+			cout << "CONVERT POUNDS TO KG" << endl << endl << "Enter weight in pounds: " << endl;
+			cin >> option1;		//user input
+			unit1.setWeight(option1);		//weight setter call
+			cout << "In kg: " << unit1.toKg(unit1.getWeight()) << " kg" << endl;		//function calls to get weight and convert to kg
+		}
+		else if (end == 4) {		//convert kg to pounds
+			cout << "CONVERT KG TO POUNDS" << endl << endl << "Enter weight in kg: " << endl;
+			cin >> option1;		//user input
+			unit1.setWeight(option1);		//weight setter call
+			cout << "In pounds: " << unit1.toPound(unit1.getWeight()) << " lbs" << endl;		//function calls to get weight and convert to pounds
+		}
+		else if (end == 5) {		//convert celsius to fahrenheit
+			cout << "CONVERT CELSIUS TO FAHRENHEIT" << endl << endl << "Enter temperature in celsius: " << endl;
+			cin >> option1;			//user input
+			unit1.setTemp(option1);			//temperature setter call
+			cout << "In fahrenheit: " << unit1.toFahr(unit1.getTemp()) << " F" << endl;			//function calls to get temperature and convert to fahrenheit
+		}
+		else if (end == 6) {		//convert fahrenheit to celsius
+			cout << "CONVERT FAHRENHEIT TO CELSIUS" << endl << endl << "Enter temperature in fahrenheit: " << endl;
+			cin >> option1;		//user input
+			unit1.setTemp(option1);			//temperature setter call
+			cout << "In celsius: " << unit1.toCelsius(unit1.getTemp()) << " C" << endl;		//function calls to get temperature and convert to celsius
+		}
+		system("pause");
+	}	//end loop
+	return 0;
+} //end main
